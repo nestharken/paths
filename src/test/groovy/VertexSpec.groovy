@@ -33,4 +33,12 @@ class VertexSpec extends Specification {
 			vertexA.edges.contains(edgeAC)
 			vertexA.edges.size == 2
 	}
+
+	def "a vertex should be able to find a path"() {
+		when:
+			setup()
+			def foundPath = a.findPathTo(c)
+		then:
+			foundPath.edges = path.edges
+	}
 }
