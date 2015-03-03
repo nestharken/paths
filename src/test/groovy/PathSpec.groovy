@@ -5,8 +5,8 @@ class PathSpec extends Specification {
 	@Shared vertexA
 	@Shared vertexB
 	@Shared vertexC
-	@shared edgeAB
-	@shared edgeBC
+	@Shared edgeAB
+	@Shared edgeBC
 	@Shared path
 
 	void setup() {
