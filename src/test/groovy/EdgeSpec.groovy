@@ -12,12 +12,18 @@ class EdgeSpec extends Specification {
 		edge = new Edge(distance:10, first:vertexA, second:vertexB)
 	}
 
-	void "an edge should return its distance"() {
-		assert edge.distance == 10
+	def "an edge should return its distance"() {
+		when:
+			setup()
+		then:
+			edge.distance == 10
 	}
 
-	void "an edge should return its vertices"() {
-		assert edge.first == vertexA
-		assert edge.second == vertexB
+	def "an edge should return its vertices"() {
+		when:
+			setup()
+		then:
+			edge.first == vertexA
+			edge.second == vertexB
 	}
 }

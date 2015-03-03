@@ -15,15 +15,22 @@ class PathSpec extends Specification {
 		vertexC = new Vertex("C")
 		edgeAB = new Edge(first:vertexA, second: vertexB, distance: 3)
 		edgeBC = new Edge(first:vertexB, second: vertexC, distance: 5)
+		path = new Path()
 		path.edges.add(edgeAB)
 		path.edges.add(edgeBC)
 	}
 
-	void "a path should return the correct total distance"() {
-		assert path.distance == 8
+	def "a path should return the correct total distance"() {
+		when:
+			setup()
+		then:
+			path.distance == 8
 	}
 
-	void "a path should return the correct vertices"() {
-		assert path.vertices == [vertexA, vertexB, vertexC]
+	def "a path should return the correct vertices"() {
+		when:
+			setup()
+		then:
+			path.vertices == [vertexA, vertexB, vertexC]
 	}
 }
