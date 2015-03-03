@@ -26,4 +26,12 @@ class EdgeSpec extends Specification {
 			edge.first == vertexA
 			edge.second == vertexB
 	}
+
+	def "an edge should be able to return the other vertex when given one"() {
+		when:
+			setup()
+		then:
+			edge.other(vertexA) == vertexB
+			edge.other(vertexB) == vertexA
+	}
 }
